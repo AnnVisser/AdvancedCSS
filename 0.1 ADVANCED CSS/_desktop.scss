@@ -1,0 +1,50 @@
+@media only screen and (min-width: 1024px) {
+  main {
+    /*Testimonial*/
+    .testimonial {
+      top: 100px;
+      min-width: 600px;
+      min-height: 710px;
+      line-height: 1.8;
+
+      .testimonial_text {
+        font-size: 28px;
+        padding: 50px;
+        padding-bottom: 150px;
+      }
+
+      .testimonial_img {
+        top: 410px;
+        width: 175px;
+        height: 175px;
+      }
+      .testimonial_info {
+        top: 510px;
+        padding-top: 90px;
+        padding-bottom: 50px;
+        h2 {
+          font-size: 24px;
+        }
+        a {
+          font-size: 24px;
+        }
+      }
+    }
+
+    /* Portfolio Grid */
+
+    .portfolio {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+
+      div[class*="photo"] {
+        width: 250px;
+        height: 250px;
+
+        img {
+          width: 250px;
+        }
+      }
+    }
+  }
+}

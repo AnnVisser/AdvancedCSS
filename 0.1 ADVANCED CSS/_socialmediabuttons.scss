@@ -1,0 +1,80 @@
+.icon::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  font-size: 20px;
+
+  .socialbuttons {
+    list-style-type: none;
+    text-align: left;
+    position: fixed;
+    z-index: 5;
+    right: -240px;
+    top: 40%;
+    transform: translateX(0);
+
+    :hover {
+      transform: translateX(-240px);
+      transition-duration: 500ms;
+      transition-timing-function: ease-in;
+      transition-property: transform;
+    }
+
+    li {
+      margin-top: 19px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    .blog {
+      background-color: #e17b77;
+      padding: 10px 60px 10px 12px;
+      ::before {
+        font: var(--fa-font-solid);
+        content: "\f5fc";
+        padding-right: 28px;
+      }
+    }
+    .twitter {
+      background-color: #00aced;
+      padding: 10px 39px 10px 15px;
+      ::before {
+        font: var(--fa-font-brands);
+        content: "\f099";
+        padding-right: 30px;
+      }
+    }
+    .linkedin {
+      background-color: #007bb6;
+      padding: 10px 45px 10px 15px;
+      ::before {
+        font: var(--fa-font-brands);
+        content: "\f0e1";
+        padding-right: 30px;
+      }
+    }
+    .facebook {
+      background-color: #3b5998;
+      padding: 10px 20px 10px 18px;
+      ::before {
+        font: var(--fa-font-brands);
+        content: "\f39e";
+        padding-right: 33px;
+      }
+    }
+    .github {
+      background-color: #333;
+      padding: 10px 25px 10px 15px;
+      ::before {
+        font: var(--fa-font-brands);
+        content: "\f09b";
+        padding-right: 30px;
+      }
+    }
+  }
+}

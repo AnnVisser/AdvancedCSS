@@ -1,0 +1,163 @@
+/* Imports */
+@import "_constants";
+
+/*Page basics*/
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "lato", sans-serif;
+}
+
+body {
+  background-color: $pagebackground;
+}
+
+/*MOBILE*/
+/*Header*/
+header {
+  @include flex-basis(row);
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  background-color: $purpleblue;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  @include flex-basis(column);
+  background-color: $pagebackground;
+  margin-bottom: 50px;
+
+  /* Testimonial */
+  .testimonial {
+    @include flex-basis(column);
+    position: relative;
+    z-index: 3;
+    top: 130px;
+    bottom: 300px;
+    min-width: 300px;
+    min-height: 380px;
+    box-shadow: 0px 10px 20px 2px grey;
+    line-height: 1.2;
+    margin-bottom: 160px;
+
+    @include box-border1(25px);
+
+    .testimonial_text {
+      position: absolute;
+      top: 0px;
+      z-index: 0;
+      @include box-border1(25px 25px 0px 0px);
+      background-color: $textbackground;
+      padding: 30px;
+      padding-bottom: 75px;
+    }
+
+    .testimonial_img {
+      position: absolute;
+      top: 190px;
+      width: 120px;
+      height: 120px;
+      z-index: 1;
+      @include box-border1(150px);
+      @include box-border2(150px);
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        @include box-border1(150px);
+      }
+    }
+
+    .testimonial_info {
+      position: absolute;
+      top: 250px;
+      min-width: 100%;
+      max-width: 100%;
+      z-index: 0;
+      text-align: center;
+      padding-top: 70px;
+      padding-bottom: 25px;
+      @include box-border1(0px 0px 25px 25px);
+      background-color: $purpleblue;
+      h2 {
+        color: white;
+        text-transform: uppercase;
+        font-size: smaller;
+      }
+      a {
+        color: $pagebackground;
+        text-decoration: none;
+      }
+    }
+  }
+
+  /* Portfolio Grid */
+
+  .portfolio {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+
+    div[class*="photo"] {
+      position: relative;
+      background-color: #292b2e;
+      width: 180px;
+      height: 180px;
+      overflow: hidden;
+      @include box-border1(15px);
+      img {
+        width: 180px;
+        position: absolute;
+        z-index: 1;
+      }
+      button {
+        @include box-border1(3px);
+        position: absolute;
+        left: 33%;
+        top: 45%;
+        padding: 5px;
+        background-color: $pagebackground;
+        z-index: 0;
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+      :hover {
+        transform: scale(1.5);
+        transition-duration: 350ms;
+        opacity: 0%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/*Social Media Buttons*/
+
+@import "_socialmediabuttons.scss";
+
+/* Footer */
+footer {
+  @include flex-basis(row);
+  position: fixed;
+  bottom: 0px;
+  z-index: 5;
+  background-color: $purpleblue;
+  width: 100%;
+  padding: 10px;
+}
+
+/*TABLET*/
+
+@import "_tablets.scss";
+
+/*DESKTOP*/
+
+@import "_desktop.scss";
